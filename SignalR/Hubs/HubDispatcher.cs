@@ -243,7 +243,7 @@ namespace SignalR.Hubs
 
         protected override IConnection CreateConnection(string connectionId, IEnumerable<string> groups, IRequest request)
         {
-            string data = request.QueryStringOrForm("connectionData");
+            string data = Uri.UnescapeDataString(request.QueryStringOrForm("connectionData"));
 
             if (String.IsNullOrEmpty(data))
             {

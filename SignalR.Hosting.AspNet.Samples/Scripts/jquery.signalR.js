@@ -319,7 +319,7 @@
                 qs = "transport=" + transport + "&connectionId=" + window.escape(connection.id);
 
             if (connection.data) {
-                qs += "&connectionData=" + window.escape(connection.data);
+                qs += "&connectionData=" + window.encodeURIComponent(connection.data);
             }
 
             if (!reconnecting) {
